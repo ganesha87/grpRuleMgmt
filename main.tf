@@ -117,14 +117,16 @@ resource "okta_group_rule" "Test-Shadow-AWS-Group-Membership"{
   expression_type   = "urn:okta:expression:1.0"
 }
 
+#Testing change of a Rule
 resource "okta_group_rule" "Testers-Shadow-AWS-Group-Membership"{
   name              = "Testers-Shadow-AWS-Group-Membership"
   group_assignments = ["00g80n8p061TuyZc25d7"]
-  expression_value  = "user.division==\"Testers\" AND user.department==\"Engineering\" AND isMemberOfAnyGroup(\"00g80o66wsa2rCK5z5d7\") "
+  expression_value  = "user.division==\"Audit\" AND user.department==\"Engineering\" AND isMemberOfAnyGroup(\"00g80o66wsa2rCK5z5d7\") "
   status            = "ACTIVE"
   expression_type   = "urn:okta:expression:1.0"
 }
 
+#Testing Add of a Rule
 resource "okta_group_rule" "Test-AWS-Group-ADD"{
   name              = "Testers-Shadow-AWS-Group-Membership"
   group_assignments = ["00g80n8p061TuyZc25d7"]
