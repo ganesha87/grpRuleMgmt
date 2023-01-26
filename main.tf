@@ -1,4 +1,14 @@
 terraform {
+  backend "remote" {
+    # The name of your Terraform Cloud organization.
+    organization = "ganesha87"
+
+    # The name of the Terraform Cloud workspace to store Terraform state files in.
+    workspaces {
+      name = "oktaGrpMgmt"
+    }
+  }
+  
   required_providers {
     okta = {
       source = "okta/okta"
