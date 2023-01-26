@@ -17,6 +17,12 @@ terraform {
   }
 }
 
+# Configure the Okta Provider
+provider "okta" {
+  org_name  = "dev-21824928"
+  base_url  = "okta.com"
+}
+
 resource "okta_group_rule" "Approvers-AWS-Shadow-Group-Membership" {
   name              = "Approvers-AWS-Shadow-Group-Membership"
   status            = "ACTIVE"
