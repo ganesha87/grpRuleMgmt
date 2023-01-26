@@ -83,8 +83,8 @@ jobs:
       run: terraform fmt -check
       
     #import existing rules into terraform state
-    - name: Import into state File
-      run: sh import-rules.sh
+    #- name: Import into state File
+    #  run: sh import-rules.sh
 
     # Generates an execution plan for Terraform
     - name: Terraform Plan
